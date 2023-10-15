@@ -9,17 +9,14 @@
   font-family: "Muller";
   src: url("./assets/fonts/MullerRegular.otf");
 }
-
 @font-face {
   font-family: "Muller Bold";
   src: url("./assets/fonts/MullerBold.otf");
 }
-
 @font-face {
   font-family: "Muller Extra Bold";
   src: url("./assets/fonts/MullerExtraBold.otf");
 }
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -49,3 +46,5 @@
     padding-right: 15px;
   }
 }
+
+/*# sourceMappingURL=styles.css.map */
