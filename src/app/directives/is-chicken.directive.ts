@@ -12,8 +12,10 @@ export class IsChickenDirective {
   set isChicken(description:string){
     if (description.toLowerCase().includes('кур')) {
 this.viewContainer.createEmbeddedView(this.templateRef)
+      // console.log(this.templateRef)
     }else{
-      this.viewContainer.clear()
+      this.viewContainer.createEmbeddedView(this.templateRef)
+      // this.viewContainer.clear()
     }
   }
 

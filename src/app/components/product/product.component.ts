@@ -22,12 +22,13 @@ export class ProductComponent {
     this.product = {
       image: '',
       title: '',
-      description: ''
+      description: '',
+      date:''
     }
 
   }
 
   addProductToCart() {
-    this.addToCartEvent.emit(this.titleComponent.toUpper());
+    this.addToCartEvent.emit(this.titleComponent.title);
   }
 }
