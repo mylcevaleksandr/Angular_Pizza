@@ -17,6 +17,7 @@
   <div class="product__action">
     <button class="btn product__btn" (click)="addProductToCart()">В корзину</button>
   </div>
+  <div>{{cartProductService.getCommonAmount()}}</div>
   <div>{{product.date| date:'full'| titlecase}}</div>
 </div>
 
