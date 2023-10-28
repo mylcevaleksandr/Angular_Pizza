@@ -1,1 +1,11 @@
-<p>products works!</p>
+<section class="products">
+  <div class="container">
+    <h2 class="products__header" id="productsHeader">Выберите свою любимую пиццу </h2>
+    <!--    {{lateData |async}}-->
+    <div class="products__items">
+      <product *ngFor="let product of products; let i=index" [product]="product" [i]="i"
+               (addToCartEvent)="addToCart($event)">
+      </product>
+    </div>
+  </div>
+</section>

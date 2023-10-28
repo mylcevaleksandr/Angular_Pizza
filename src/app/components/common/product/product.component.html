@@ -11,11 +11,11 @@
     </div>
   </ng-template>
   <custom-title [title]="product.title|uppercase"></custom-title>
-  <div class="product__text">{{product.description |titlecase| wordUpper:['сыр','томат','сось','гри']}}</div>
+  <div class="product__text">{{product.description |titlecase| wordUpper:['сыр', 'томат', 'сось', 'гри']}}</div>
   <div class="product__action">
     <button class="btn product__btn" (click)="addProductToCart()">В корзину</button>
   </div>
-<!--  <div>{{cartProductService.getCommonAmount()}}</div>-->
-<!--  <div>{{product.date| date:'full'| titlecase}}</div>-->
+  <!--  <div>{{cartProductService.getCommonAmount()}}</div>-->
+  <!--  <div>{{product.date| date:'full'| titlecase}}</div>-->
 </div>
 

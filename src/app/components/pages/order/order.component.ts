@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-order',
@@ -7,4 +7,32 @@ import { Component } from '@angular/core';
 })
 export class OrderComponent {
 
+  public formValues = {
+    productTitle: "",
+    address: "",
+    phone: ""
+  }
+
+  public createOrder() {
+
+    if (!this.formValues.productTitle) {
+      alert("fill pizza");
+      return;
+    }
+    if (!this.formValues.address) {
+      alert("fill address");
+      return;
+    }
+    if (!this.formValues.phone) {
+      alert("fill phone");
+      return;
+    }
+    alert("Thank You!");
+
+    this.formValues = {
+      productTitle: "",
+      address: "",
+      phone: ""
+    }
+  }
 }

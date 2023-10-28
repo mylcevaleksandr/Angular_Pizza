@@ -31,22 +31,22 @@
       </div>
       <ul class="menu__list">
         <li class="menu__item">
-          <a href="#" class="menu__link">Пиццы</a>
+          <a [routerLink]="'/'" class="menu__link">Главная</a>
         </li>
         <li class="menu__item">
-          <a routerLink="about" class="menu__link">О Нас</a>
+          <a [routerLink]="'/about'" class="menu__link">О Нас</a>
         </li>
         <li class="menu__item">
-          <a href="#" class="menu__link">Доставка и оплата</a>
+          <a [routerLink]="'/products'" class="menu__link">Продукты</a>
         </li>
         <li class="menu__item">
-          <a href="#" class="menu__link">Контакты</a>
+          <a [routerLink]="'/order'" class="menu__link">Доставка и оплата</a>
         </li>
       </ul>
     </nav>
     <div class="header__cart">
       <img src="../../../../assets/images/commerce-and-shopping.png" alt="cart">
-<!--      <div>{{cartService.count}}</div>-->
+      <!--      <div>{{cartService.count}}</div>-->
     </div>
   </div>
 </header>

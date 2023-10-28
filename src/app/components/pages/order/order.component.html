@@ -1,1 +1,30 @@
-<p>order works!</p>
+<section class="order" #orderElement>
+  <div class="container order__container">
+    <div class="order__text">
+      <div class="double-title order__double-title">
+        <span class="double-title__span">Хватит думать! </span>Доставим заказ за 30 минут!
+      </div>
+      <div class="order__text-message" id="order">
+        Мы гарантированно доставим вашу пиццу за 30 минут с момента оформления заказа. Если мы опоздаем даже на
+        1 минуту - вы получаете весь заказ бесплатно и ваучер на скидку на следующий заказ. Мы гордимся нашим
+        сервисом и сделаем всё, чтобы наш клиент был доволен и не остался голодный!
+      </div>
+    </div>
+    <div class="order__form">
+      <input name="al" type="text" class="base-input order__base-input" coolInput
+             [coolInputDefaultBgColor]="'#4890ed'" [coolInputBgColor]="'pink'" id="product-input" placeholder="Пицца"
+             [(ngModel)]="formValues.productTitle">
+      <input type="text" class="base-input order__base-input" coolInput
+             [coolInputDefaultBgColor]="'#4890ed'" [coolInputBgColor]="'pink'" id="address__input"
+             placeholder="Адрес доставки"
+             [(ngModel)]="formValues.address">
+      <input type="text" class="base-input order__base-input" coolInput
+             [coolInputDefaultBgColor]="'#4890ed'" [coolInputBgColor]="'pink'" id="phone__input" placeholder="Телефон"
+             [(ngModel)]="formValues.phone">
+      <button class="btn order__btn" (click)="createOrder()">Оформить заказ</button>
+    </div>
+    <div class="order__image">
+      <img src="assets/images/pizzzzza.png" alt="pizza" class="order__image-img">
+    </div>
+  </div>
+</section>
