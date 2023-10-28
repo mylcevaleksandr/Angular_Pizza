@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {CartService} from "../../services/cart.service";
+// import {CartService} from "../../../services/cart.service";
 
 @Component({
   selector: 'app-header',
@@ -7,6 +7,6 @@ import {CartService} from "../../services/cart.service";
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-constructor(public cartService:CartService) {
-}
+// constructor(public cartService:CartService) {
+// }
 }

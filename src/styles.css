@@ -18,6 +18,8 @@
   src: url("./assets/fonts/MullerExtraBold.otf");
 }
 .container {
+  padding-top: 30px;
+  padding-bottom: 30px;
   max-width: 1200px;
   margin: 0 auto;
 }

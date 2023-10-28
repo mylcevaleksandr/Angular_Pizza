@@ -1,6 +1,4 @@
 <div class="product" *isChicken="product.description">
-
-
   <div *ngIf="product.image;then productImageBlock else defaultImageBlock"></div>
   <ng-template #productImageBlock>
     <div class=" product__image">
