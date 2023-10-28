@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';
-import {ProductType} from "../../types/product.type";
+import {ProductType} from "../../../types/product.type";
 import {TitleComponent} from "../title/title.component";
-import {CartProductService} from "../../services/cart-product.service";
+import {CartProductService} from "../../../services/cart-product.service";
 
 @Component({
   selector: 'product',
