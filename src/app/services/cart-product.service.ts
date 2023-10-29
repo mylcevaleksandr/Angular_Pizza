@@ -8,7 +8,7 @@ export class CartProductService {
   constructor(private cartService:CartService) {
   }
 
-  getCommonAmount(){
-    return this.count+'/'+ this.cartService.count
-  }
+  // getCommonAmount(){
+  //   return this.count+'/'+ this.cartService.count
+  // }
 }

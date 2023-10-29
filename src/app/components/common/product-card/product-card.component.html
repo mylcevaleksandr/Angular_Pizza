@@ -13,9 +13,11 @@
   <custom-title [title]="product.title|uppercase"></custom-title>
   <div class="product__text">{{product.description |titlecase| wordUpper:['сыр', 'томат', 'сось', 'гри']}}</div>
   <div class="product__action">
-    <button class="btn product__btn" (click)="addProductToCart()">В корзину</button>
+    <a class="btn product__btn" routerLink="/order" [queryParams]="{product:product.title}">В корзину</a>
+    <a class="btn product__btn btn__white " [routerLink]="['/products',product.id]">Подробнее</a>
   </div>
+  <!--  (click)="addProductToCart()"-->
   <!--  <div>{{cartProductService.getCommonAmount()}}</div>-->
-  <!--  <div>{{product.date| date:'full'| titlecase}}</div>-->
+  <!--  <div>{{product-card.date| date:'full'| titlecase}}</div>-->
 </div>
 

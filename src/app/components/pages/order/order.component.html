@@ -2,7 +2,8 @@
   <div class="container order__container">
     <div class="order__text">
       <div class="double-title order__double-title">
-        <span class="double-title__span">Хватит думать! </span>Доставим заказ за 30 минут!
+        <a routerLink="/order" [queryParams]="{product:'test'}" class="double-title__span">Хватит думать! </a>Доставим
+        заказ за 30 минут!
       </div>
       <div class="order__text-message" id="order">
         Мы гарантированно доставим вашу пиццу за 30 минут с момента оформления заказа. Если мы опоздаем даже на

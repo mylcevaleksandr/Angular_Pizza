@@ -26,6 +26,10 @@
   font-size: 16px;
   color: rgb(164, 107, 0);
   line-height: 1.2;
+
+}
+.active{
+  color: #60db30;
 }
 
 .header__burger {
@@ -62,6 +66,7 @@
   .menu__ul {
     max-width: 390px;
   }
+
 
   .header__cart {
     margin-left: 20px;

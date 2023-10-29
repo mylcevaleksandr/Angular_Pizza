@@ -25,6 +25,10 @@
   line-height: 1.2;
 }
 
+.active {
+  color: #60db30;
+}
+
 .header__burger {
   display: none;
 }

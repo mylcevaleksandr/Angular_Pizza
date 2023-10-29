@@ -4,12 +4,12 @@ import {TitleComponent} from "../title/title.component";
 import {CartProductService} from "../../../services/cart-product.service";
 
 @Component({
-  selector: 'product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss'],
+  selector: 'product-card',
+  templateUrl: './product-card.component.html',
+  styleUrls: ['./product-card.component.scss'],
   providers: [CartProductService]
 })
-export class ProductComponent {
+export class ProductCardComponent {
   @Input() product: ProductType
   @Input() i: number = 0
   @Output() addToCartEvent: EventEmitter<string> = new EventEmitter<string>()
@@ -22,16 +22,16 @@ export class ProductComponent {
 
   constructor(public cartProductService: CartProductService) {
     this.product = {
+      id: 0,
       image: '',
       title: '',
       description: '',
       date: ''
     }
-
   }
 
-  addProductToCart() {
-    this.cartProductService.count++
-    this.addToCartEvent.emit(this.titleComponent.title);
-  }
+  // addProductToCart() {
+  //   this.cartProductService.count++
+  //   this.addToCartEvent.emit(this.titleComponent.title);
+  // }
 }
