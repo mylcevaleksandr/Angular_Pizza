@@ -1,13 +1,14 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {CartService} from "../../../services/cart.service";
 import {ActivatedRoute, Params} from "@angular/router";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-order',
   templateUrl: './order.component.html',
   styleUrls: ['./order.component.scss']
 })
-export class OrderComponent implements OnInit {
+export class OrderComponent implements OnInit, OnDestroy {
   public formValues = {
     productTitle: "",
     address: "",
@@ -17,25 +18,29 @@ export class OrderComponent implements OnInit {
   constructor(private cartService: CartService, private activatedRoute: ActivatedRoute) {
   }
 
+  private subscription: Subscription | null = null
+
   ngOnInit() {
     // if (this.cartService.product-card){
     //   this.formValues.productTitle=this.cartService.product-card
     // }
 
-    const productParam=this.activatedRoute.snapshot.queryParamMap.get('product')
-
-    if (productParam){
-      this.formValues.productTitle = productParam
-    }
-
-    // this.activatedRoute.queryParams.subscribe((params: Params) => {
-    //   if (params['product-card']) {
-    //     this.formValues.productTitle = params['product-card']
+    // const productParam=this.activatedRoute.snapshot.queryParamMap.get('product')
     //
-    //   }
-    // })
+    // if (productParam){
+    //   this.formValues.productTitle = productParam
+    // }
+
+    this.subscription = this.activatedRoute.queryParams.subscribe((params: Params) => {
+      if (params['product']) {
+        this.formValues.productTitle = params['product']
+      }
+    })
   }
 
+  ngOnDestroy() {
+    this.subscription?.unsubscribe()
+  }
 
   public createOrder() {
 
