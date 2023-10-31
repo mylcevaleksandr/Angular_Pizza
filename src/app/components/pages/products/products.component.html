@@ -6,7 +6,11 @@
       <product-card *ngFor="let product of products; let i=index" [product]="product" [i]="i">
 <!--               (addToCartEvent)="addToCart($event)"-->
       </product-card>
+<div *ngIf="loading" class="loader-bg">
+  <div class="loader">
 
+  </div>
+</div>
     </div>
   </div>
 </section>

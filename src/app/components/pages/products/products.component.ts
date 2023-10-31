@@ -3,6 +3,8 @@ import {ProductType} from "../../../types/product.type";
 import {ProductService} from "../../../services/product.service";
 import {CartService} from "../../../services/cart.service";
 import {Router} from "@angular/router";
+import {HttpClient} from "@angular/common/http";
+import {tap} from "rxjs";
 
 @Component({
   selector: 'app-products',
@@ -10,10 +12,11 @@ import {Router} from "@angular/router";
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  constructor(private productService: ProductService, private cartService: CartService, private router: Router) {
+  constructor(private productService: ProductService, private cartService: CartService, private router: Router, private http: HttpClient) {
   }
 
   public products: ProductType[] = []
+  loading: boolean = false
 
   ngOnInit() {
     // this.lateData = new Promise<string>(function (resolve) {
@@ -21,7 +24,26 @@ export class ProductsComponent implements OnInit {
     //     resolve('Hello!')
     //   }, 3000)
     // })
-    this.products = this.productService.getProducts()
+    // this.products = this.productService.getProducts()
+    this.loading = true
+    // @ts-ignore
+    this.productService.getProducts()
+      .pipe(
+        tap(() => {
+          this.loading = false
+        })
+      )
+      .subscribe(
+        {
+          next: (data) => {
+            this.products = data
+          },
+          error: (error) => {
+            console.log(error)
+            this.router.navigate(['/'])
+          }
+        }
+      )
   }
 
 

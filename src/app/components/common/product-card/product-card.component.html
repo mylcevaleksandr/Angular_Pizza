@@ -2,7 +2,7 @@
   <div *ngIf="product.image;then productImageBlock else defaultImageBlock"></div>
   <ng-template #productImageBlock>
     <div class=" product__image">
-      <img [src]="'assets/images/'+product.image" alt="pizza {{i+1}}">
+      <img [src]="product.image" alt="pizza {{i+1}}">
     </div>
   </ng-template>
   <ng-template #defaultImageBlock>

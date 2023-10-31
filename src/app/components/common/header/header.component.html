@@ -46,8 +46,8 @@
     </nav>
     <div class="header__cart">
       <img src="../../../../assets/images/commerce-and-shopping.png" alt="cart">
-      <a href="#" (click)="logIn()" *ngIf="!loggedState">Войти</a>
-      <a href="#" (click)="logOut()" *ngIf="loggedState">Выйти</a>
+      <a href="#"  type="button" (click)="logIn()" *ngIf="!loggedState">Войти</a>
+      <a href="#" type="button" (click)="logOut()" *ngIf="loggedState">Выйти</a>
     </div>
   </div>
 </header>

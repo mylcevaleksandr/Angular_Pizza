@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {CartService} from "../../../services/cart.service";
 import {ActivatedRoute, Params} from "@angular/router";
 import {Subscription} from "rxjs";
+import {ProductService} from "../../../services/product.service";
 
 @Component({
   selector: 'app-order',
@@ -15,7 +16,7 @@ export class OrderComponent implements OnInit, OnDestroy {
     phone: ""
   }
 
-  constructor(private cartService: CartService, private activatedRoute: ActivatedRoute) {
+  constructor(private cartService: CartService, private activatedRoute: ActivatedRoute, private productService: ProductService) {
   }
 
   private subscription: Subscription | null = null
@@ -56,12 +57,25 @@ export class OrderComponent implements OnInit, OnDestroy {
       alert("fill phone");
       return;
     }
-    alert("Thank You!");
 
-    this.formValues = {
-      productTitle: "",
-      address: "",
-      phone: ""
-    }
+    this.productService.createOrder({
+      product: this.formValues.productTitle,
+      address: this.formValues.address,
+      phone: this.formValues.phone
+    })
+      .subscribe(response => {
+        if (response.success && !response.message){
+          alert("Thank You!");
+
+          this.formValues = {
+            productTitle: "",
+            address: "",
+            phone: ""
+          }
+        }else {
+          alert('Ошибка!')        }
+          })
+
+
   }
 }

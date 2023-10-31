@@ -18,6 +18,7 @@ export class AuthService {
   }
 
   logOut() {
+
     this.isLogged = false
     this.isLogged$.next(this.isLogged)
 
@@ -25,5 +26,9 @@ export class AuthService {
 
   isLoggedIn() {
     return this.isLogged
+  }
+
+  getToken() {
+    return "test3"
   }
 }

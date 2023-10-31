@@ -30,4 +30,6 @@ export class HeaderComponent implements OnInit {
   logOut() {
     this.authService.logOut()
   }
+
+  protected readonly Event = Event;
 }
