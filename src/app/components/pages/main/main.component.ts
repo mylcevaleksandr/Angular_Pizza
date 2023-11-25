@@ -1,6 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {CartService} from "../../../services/cart.service";
 import {from, map, Observable, Subscription} from "rxjs";
+import * as bootstrap from 'bootstrap'
 
 @Component({
   selector: 'app-main',
@@ -44,8 +45,13 @@ export class MainComponent implements OnInit, OnDestroy {
   private subscription: Subscription | null = null
 
   ngOnInit() {
-    this.subscription = this.observable
+    setTimeout(() => {
+      const mainModal = new bootstrap.Modal('#mainModal', {})
+      mainModal.show()
+    }, 3000)
 
+
+    this.subscription = this.observable
       .pipe(
         map((num) => {
           return num * 7

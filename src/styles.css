@@ -119,6 +119,9 @@
   width: 224px;
   height: 60px;
 }
+.main__btn:hover {
+  background-color: rgb(96, 219, 48);
+}
 
 .products {
   padding: 80px 0 120px 0;

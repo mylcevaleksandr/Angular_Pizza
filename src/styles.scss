@@ -48,6 +48,7 @@
   text-align: center;
 }
 
+
 @media screen and (max-width: 1229px) {
   .container {
     padding-left: 15px;
@@ -123,6 +124,10 @@
 .main__btn {
   width: 224px;
   height: 60px;
+
+  &:hover {
+    background-color: rgb(96, 219, 48);
+  }
 }
 
 .products {
@@ -422,10 +427,10 @@
 }
 
 @keyframes spin {
-  0%{
+  0% {
     transform: rotate(0deg);
   }
-  100%{
+  100% {
     transform: rotate(360deg);
   }
 }
